@@ -1,0 +1,34 @@
+.navbar-brand {
+    margin-right: 2rem;
+  }
+  
+  @media (max-width: 950px) {
+    .navbar-collapse {
+      display: none;
+    }
+  
+    .navbar-brand,
+    .navbar-toggler {
+      display: block;
+
+    }
+  
+    .navbar-toggler {
+      float:right;
+    }
+    .navbar-collapse.show {
+      position: fixed;
+      top: 50px;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      background-color: white;
+      padding: 4rem;
+      box-shadow: 0 0px 10px white;
+      display:flex;
+      flex-direction: column;
+    }
+
+  }
+
+  
