@@ -7,9 +7,8 @@ import Cards from '../Cards';
 function Products() {
     return (
         <>
-            <div className='nav'>   
-                <NavBar />
-            </div>
+               
+            <NavBar />
             <div className='produits'>          
                 <Cards/> 
             </div>

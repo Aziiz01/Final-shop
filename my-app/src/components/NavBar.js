@@ -6,24 +6,24 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import './NavBar.css';
 import { BsSearch } from 'react-icons/bs';
 import {MdAccountBox} from 'react-icons/md';
 import {AiFillShopping} from 'react-icons/ai';
+import './NavBar.css';
 
 function NavBar() {
   const [expanded, setExpanded] = React.useState(false);
 
   return (
-    <Navbar bg="light" expand="lg" expanded={expanded} onToggle={()=> setExpanded(!expanded)}>
+    <Navbar className="navbar" bg="light" expand="lg" expanded={expanded} onToggle={()=> setExpanded(!expanded)}>
       <Container fluid>
-        <Navbar.Brand as={Link} to="/" exact>FASHION</Navbar.Brand>
+        <Navbar.Brand as={Link} to="/" exact><h1>FASHION</h1></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-toggle"/ >
-        <Navbar.Collapse id="navbar-toggle">
+        <Navbar.Collapse id="navbar-toggle" >
           <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '200px' }}>
-            <Nav.Link as={Link} to="/" exact>Home</Nav.Link>
-            <NavDropdown title="Products" id="products-dropdown">
-              <NavDropdown.Item as={Link} to="/products">eyelash</NavDropdown.Item>
+            <Nav.Link as={Link} to="/" exact style={{padding:expanded? '10px':'none'}}><h3>Home</h3></Nav.Link>
+            <NavDropdown title={<h3>Products</h3>} id="products-dropdown">
+              <NavDropdown.Item className="navbar-dropdown"  as={Link} to="/products">eyelash</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
                 Another action
               </NavDropdown.Item>
