@@ -1,5 +1,5 @@
 .footer-container {
-    background-color: #242424;
+    background-color: #000000;
     padding: 4rem 0 2rem 0;
     display: flex;
     flex-direction: column;
@@ -65,7 +65,22 @@
     width: 160px;
     box-sizing: border-box;
   }
+  .footer-btns .btn--outline {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: all 0.2s ease-in-out;
+  }
+  .footer-btns .btn--outline:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+  }
   
+    
   .footer-link-items h2 {
     margin-bottom: 16px;
   }

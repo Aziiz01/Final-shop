@@ -34,6 +34,26 @@
 .hero-btns .btn {
   margin: 6px;
 }
+.hero-btns .btn--outline {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  transition: all 0.2s ease-in-out;
+}
+
+.hero-btns .btn--outline:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.hero-btns .btn--large {
+  font-size: 20px;
+  padding: 15px 25px;
+}
 
 .fa-play-circle {
   margin-left: 4px;
@@ -65,4 +85,5 @@
     width: 100%;
   }
 }
+
 
