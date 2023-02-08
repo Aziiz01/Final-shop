@@ -5,6 +5,8 @@ import NavBar from "../NavBar";
 import { useState } from "react";
 import FormInput from "../FormInput";
 import '../pages/Signup.css'
+
+
 const Signup = () => {
     const [values, setValues] = useState({
       username: "",
@@ -72,7 +74,7 @@ const Signup = () => {
     const onChange = (e) => {
       setValues({ ...values, [e.target.name]: e.target.value });
     };
-  
+    const [isAgreed, setIsAgreed] = useState(false);
     return (
         <>
         <NavBar />
@@ -87,12 +89,28 @@ const Signup = () => {
               onChange={onChange}
             />
           ))}
-          <button className="submit">Submit</button>
+        <div className="terms"> 
+        <form>
+        <label>
+          <input
+            type="checkbox"
+            checked={isAgreed}
+            onChange={() => setIsAgreed(!isAgreed)}
+          />
+          Please agree to our terms of use, terms of sale, and privacy policy to create an account.
+        </label>
+      </form>
+          </div>
+          <button className="submit" type="submit" disabled={!isAgreed} >Submit</button>
+          
+          {!isAgreed && <span>Please agree to the terms and conditions</span>}
+
         </form>
       </div>
       <Footer />
       </>
     );
   };
+
   
   export default Signup;
