@@ -2,68 +2,97 @@ import React from "react";
 import '../../App.css';
 import Footer from "../Footer";
 import NavBar from "../NavBar";
-import * as Components from './Components';
-import "../pages/Signup.css"
-
-
-export default function Signup() {
-    const [signIn, toggle] = React.useState(true);
-
-    return (
-        <div >
-            <NavBar/>
-            <div>
-            <Components.Container>
-              <Components.SignUpContainer signinIn={signIn}>
-                  <Components.Form>
-                      <Components.Title>Create Account</Components.Title>
-                      <Components.Input type='text' placeholder='Name' />
-                      <Components.Input type='email' placeholder='Email' />
-                      <Components.Input type='password' placeholder='Password' />
-                      <Components.Button>Sign Up</Components.Button>
-                  </Components.Form>
-              </Components.SignUpContainer>
-
-              <Components.SignInContainer signinIn={signIn}>
-                   <Components.Form>
-                       <Components.Title>Sign in</Components.Title>
-                       <Components.Input type='email' placeholder='Email' />
-                       <Components.Input type='password' placeholder='Password' />
-                       <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
-                       <Components.Button>Sigin In</Components.Button>
-                   </Components.Form>
-              </Components.SignInContainer>
-
-              <Components.OverlayContainer signinIn={signIn}>
-                  <Components.Overlay signinIn={signIn}>
-
-                  <Components.LeftOverlayPanel signinIn={signIn}>
-                      <Components.Title>Welcome Back!</Components.Title>
-                      <Components.Paragraph>
-                          To keep connected with us please login with your personal info
-                      </Components.Paragraph>
-                      <Components.GhostButton onClick={() => toggle(true)}>
-                          Sign In
-                      </Components.GhostButton>
-                      </Components.LeftOverlayPanel>
-
-                      <Components.RightOverlayPanel signinIn={signIn}>
-                        <Components.Title>Hello, Friend!</Components.Title>
-                        <Components.Paragraph>
-                            Enter Your personal details and start journey with us
-                        </Components.Paragraph>
-                            <Components.GhostButton onClick={() => toggle(false)}>
-                                Sigin Up
-                            </Components.GhostButton> 
-                      </Components.RightOverlayPanel>
+import { useState } from "react";
+import FormInput from "../FormInput";
+import '../pages/Signup.css'
+const Signup = () => {
+    const [values, setValues] = useState({
+      username: "",
+      email: "",
+      birthday: "",
+      password: "",
+      confirmPassword: "",
+    });
   
-                  </Components.Overlay>
-              </Components.OverlayContainer>
-
-          </Components.Container>
-                
-            </div>
-            
-        </div>
-        )
-}
+    const inputs = [
+      {
+        id: 1,
+        name: "username",
+        type: "text",
+        placeholder: "Username",
+        errorMessage:
+          "Username should be 3-16 characters and shouldn't include any special character!",
+        label: "Username",
+        pattern: "^[A-Za-z0-9]{3,16}$",
+        required: true,
+      },
+      {
+        id: 2,
+        name: "email",
+        type: "email",
+        placeholder: "Email",
+        errorMessage: "It should be a valid email address!",
+        label: "Email",
+        required: true,
+      },
+      {
+        id: 3,
+        name: "birthday",
+        type: "date",
+        placeholder: "Birthday",
+        label: "Birthday",
+      },
+      {
+        id: 4,
+        name: "password",
+        type: "password",
+        placeholder: "Password",
+        errorMessage:
+          "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
+        label: "Password",
+        pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
+        required: true,
+      },
+      {
+        id: 5,
+        name: "confirmPassword",
+        type: "password",
+        placeholder: "Confirm Password",
+        errorMessage: "Passwords don't match!",
+        label: "Confirm Password",
+        pattern: values.password,
+        required: true,
+      },
+    ];
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+    };
+  
+    const onChange = (e) => {
+      setValues({ ...values, [e.target.name]: e.target.value });
+    };
+  
+    return (
+        <>
+        <NavBar />
+      <div className="signup">
+        <form className="signform" onSubmit={handleSubmit}>
+          <h1 className="create">Create Account</h1>
+          {inputs.map((input) => (
+            <FormInput
+              key={input.id}
+              {...input}
+              value={values[input.name]}
+              onChange={onChange}
+            />
+          ))}
+          <button className="submit">Submit</button>
+        </form>
+      </div>
+      <Footer />
+      </>
+    );
+  };
+  
+  export default Signup;

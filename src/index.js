@@ -9,7 +9,7 @@ import About from "./components/pages/About";
 import Products from "./components/pages/Products";
 import ErrorPage from "./components/errorElement";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Signup from './components/pages/Signup'
 
 const router = createBrowserRouter([
   {
@@ -25,6 +25,11 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <About />,
+    errorElement:<ErrorPage/>,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
     errorElement:<ErrorPage/>,
   },
 ]);
