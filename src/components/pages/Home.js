@@ -4,11 +4,16 @@ import NavBar from '../NavBar'
 import Footer from '../Footer';
 import HeroSection from '../HeroSection';
 import Cards from '../Cards';
+import CardItem from "../CardItem"
+import Carousel from 'react-bootstrap/Carousel';
+import { CarouselItem } from 'react-bootstrap';
+import Herohome from '../Herohome';
 
 
 function Home() {
   return (
     <>
+    
     <HeroSection
         imgSrc="images/img-back.jpg"
         altText="image-1"
@@ -16,9 +21,9 @@ function Home() {
         descriptionText="What are you waiting for?"
         buttonText="GET STARTED"
       />
-      <div className='category-products' >
-        textttt
-      </div>
+      
+      <Herohome />
+       
       <HeroSection
         imgSrc="images/img-7.jpg"
         altText="image-2"
@@ -26,9 +31,8 @@ function Home() {
         descriptionText="Upgrade your wardrobe now"
         buttonText="SHOP NOW"
       />
-      <div className='category-products' >
-        textttt
-      </div>
+      <Herohome />
+
       <HeroSection
         imgSrc="images/img-8.jpg"
         altText="image-3"
@@ -36,9 +40,8 @@ function Home() {
         descriptionText="Get the latest fashion trends"
         buttonText="EXPLORE"
       />
-      <div className='category-products' >
-        textttt
-      </div>
+      
+      <Herohome />
     
     <Footer/>
     </>

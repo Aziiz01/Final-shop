@@ -1,6 +1,8 @@
 import React from 'react';
 import './HeroSection.css';
 import Button from './Button';
+import CardItem from "./CardItem"
+
 
 function HeroSection({imgSrc, altText, headerText, descriptionText, buttonText}) {
   return (
