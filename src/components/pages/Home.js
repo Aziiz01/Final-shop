@@ -3,16 +3,17 @@ import '../../App.css'
 import NavBar from '../NavBar'
 import Footer from '../Footer';
 import HeroSection from '../HeroSection';
-import Cards from '../Cards';
 import CardItem from "../CardItem"
-import Carousel from 'react-bootstrap/Carousel';
 import { CarouselItem } from 'react-bootstrap';
 import Herohome from '../Herohome';
+import homeData from '../homeProducts';
+
 
 
 function Home() {
   return (
     <>
+    
     
     <HeroSection
         imgSrc="images/img-back.jpg"
@@ -22,8 +23,8 @@ function Home() {
         buttonText="GET STARTED"
       />
       
-      <Herohome />
-       
+      <Herohome  />  
+
       <HeroSection
         imgSrc="images/img-7.jpg"
         altText="image-2"
@@ -31,7 +32,7 @@ function Home() {
         descriptionText="Upgrade your wardrobe now"
         buttonText="SHOP NOW"
       />
-      <Herohome />
+      <Herohome  />
 
       <HeroSection
         imgSrc="images/img-8.jpg"

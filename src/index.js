@@ -11,6 +11,7 @@ import ErrorPage from "./components/errorElement";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Signup from './components/pages/Signup'
 
+
 const router = createBrowserRouter([
   {
     path: "/",
