@@ -1,35 +1,46 @@
+import Carousel from "react-multi-carousel";
+import 'react-multi-carousel/lib/styles.css';
+import React from "react";
+import homeData from "./homeProducts";
+import CardItem from "./CardItem";
 
-/*
-function Herohome () {
+export default  function Herohome (name) {
  
    const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1024 },
-      items: 5,
+      items: 3,
       slidesToSlide: 2,
     },
     desktop: {
       breakpoint: { max: 1024, min: 800 },
-      items: 4,
+      items: 3,
     },
     tablet: {
       breakpoint: { max: 800, min: 464 },
-      items: 2,
+      items: 1,
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
       items: 1,
     },
   };
-  
+
     return (
       <div className='Appa'>
-        <h1>REACT CAROUSEL</h1>
-        <Carousel responsive={responsive}>
-        <div className='category-products' style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }} >
-        {homeData.map((homeData) => (
-        <div style={{width:"50%", margin: "100px" }}>
-      <CardItem
+
+       <Carousel responsive={responsive}
+       swipeable={true}
+       draggable={true}
+       showDots={true}
+  infinite={true}
+  autoPlaySpeed={1000}
+  keyBoardControl={true}
+  containerClass="carousel-container"
+  dotListClass="custom-dot-list-style"
+  itemClass="carousel-item-padding-40-px">
+       { homeData.map((homeData) => (
+       <CardItem
           id={homeData.id}
           img={homeData.img}
           img2={homeData.img2}
@@ -40,34 +51,145 @@ function Herohome () {
           etat={homeData.etat}
           rating={homeData.rating}
         />
-        </div>
+        
         ))}
-        </div>
-        <div className='category-products' style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }} >
-        {homeData.map((homeData) => (
+               </Carousel>
+             
 
-      <div style={{width:"30%", margin: "100px" }}>
-    <CardItem
-        id={homeData.id}
-        img={homeData.img}
-        img2={homeData.img2}
-        img3={homeData.img3}
-        title={homeData.title}
-        text={homeData.text}
-        price={homeData.price}
-        etat={homeData.etat}
-        rating={homeData.rating}
-      />
-      </div>
-              ))}
-
-      </div>
-      
-      
-              </Carousel>
       </div>
     );
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

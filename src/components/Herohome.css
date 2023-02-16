@@ -22,3 +22,14 @@
     margin: 10px;
   }
 }
+
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item-padding-40-px {
+  display: flex;
+  justify-content: center;
+}
