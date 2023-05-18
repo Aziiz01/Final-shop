@@ -1,0 +1,25 @@
+.cart-items{
+    display: flex;
+    flex-direction: column;
+}
+.cart-item{
+    display: grid;
+    grid-template-columns: 25% 70%;
+    gap: 20px;
+    border: 2px solid gainsboro;
+}
+.cart-info{
+    display: flex;
+    flex-direction: column;
+}
+.first-row{
+    padding-top: 15px;
+    display:grid;
+    grid-template-columns:70% 20% ;
+}
+.second-row{
+    padding-top: 5px ;
+}
+button{
+    background-color: transparent;
+}

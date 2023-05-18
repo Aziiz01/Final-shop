@@ -1,0 +1,107 @@
+moda{
+    margin-top: 20px;
+}
+.modal-body{
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+.link-section{
+    position:absolute;
+    margin-top: 0px;
+    width: 90%;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.link-section a{
+    text-decoration: none;
+    text-align: center;
+    padding-top: 6px;
+    color: #ffffff;
+}
+.link-section a h4{
+    font-family: "Brush Script";
+}
+.link-section a:hover{
+    color: gold;
+    background-color: rgb(31, 79, 134);
+}
+
+.categorie-section{
+    display: grid;
+    margin-top: 55px;
+    grid-template-columns: 15% 85%;
+    height: 700px;
+    border: 5px solid #ffffff;
+}
+
+
+.cat-title a{
+    text-decoration: none;
+}
+.cat-title a h4{
+    padding-top: 20px;
+    padding-left: 20px;
+    color: #ffffff;
+    font-family: "Brush Script";
+    letter-spacing: 2px;
+}
+.cat-title a h4:hover{
+    color: goldenrod;
+}
+img{
+    max-width: 80%;
+    height: auto;
+}
+.other-section{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    border: 3px solide white;
+    width: 100%;
+    height: 500px;
+}
+.section1{
+    width: 100%;
+    border: 3px solid #ffffff;
+}
+.img1{
+    max-width: 100%;   
+}
+.catBtn1{
+    position: absolute;
+    top: 80%;
+    right: 67%;
+    background-color:  transparent ;
+    border:2px solid wheat;
+    cursor: pointer;
+    justify-content: center;
+}
+.catBtn2{
+    position: absolute;
+    top: 80%;
+    right: 17%;
+    border:2px solid wheat;
+    background-color:  transparent ;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.catBtn1 h4{
+    font-weight: bold;
+    font-family: "Brush Script"; 
+    color: wheat
+}
+.catBtn2 h4{
+    font-weight: bold;
+    font-family: "Brush Script"; 
+    color:wheat;
+}
+.catBtn1:hover{
+    color: chocolate;
+}
+.catBtn2:hover{
+    color: chocolate;
+}
